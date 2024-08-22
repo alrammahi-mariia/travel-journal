@@ -8,7 +8,7 @@ pipeline {
    stages {
       stage('Checkout') {
         steps {
-          url: 'https://github.com/alrammahi-mariia/travel-journal.git', branch: 'main'
+          git url: 'https://github.com/alrammahi-mariia/travel-journal.git', branch: 'main'
         }
       }
 
