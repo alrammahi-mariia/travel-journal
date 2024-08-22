@@ -2,13 +2,13 @@ pipeline {
    agent any
 
    tools {
-    nodejs 'nodejs'
+    nodejs 'node'
     }
 
    stages {
       stage('Checkout') {
         steps {
-          git url: 'https://github.com/alrammahi-mariia/travel-journal.git', branch: 'main'
+          git branch: 'main', url: 'https://github.com/alrammahi-mariia/travel-journal/'
         }
       }
 
