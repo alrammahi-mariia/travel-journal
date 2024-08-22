@@ -6,12 +6,20 @@ pipeline {
     }
 
    stages {
-      stage("npm install") {
+      stage('Checkout') {
         steps {
-          sh 'npm install'
+          url: 'https://github.com/alrammahi-mariia/travel-journal.git', branch: 'main'
         }
       }
 
+      stage('Build') {
+        steps {
+          sh 'npm install'
 
-   }
+          sh 'npm run build'
+        }
+
+      }
+
+    }
 }
