@@ -27,6 +27,11 @@
 pipeline {
     agent any
 
+    tools {
+      nodejs 'node'
+    }
+
+
     environment {
         NETLIFY_SITE_ID = 'cce76f82-8201-49d8-8568-bfbf975bdead' // Replace with your Netlify Site ID
         NETLIFY_AUTH_TOKEN = credentials('nfp_8fvPFR3VrysxymzSKzApTRMHbnxFacCp511f') // Replace with your Jenkins Credential ID for Netlify token
