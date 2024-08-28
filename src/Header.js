@@ -6,11 +6,6 @@ export default function Header() {
       <header>
         <p>my travel journal</p>
       </header>
-      <nav>
-        <ul>
-          <li>About us</li>
-        </ul>
-      </nav>
     </div>
   );
 }
