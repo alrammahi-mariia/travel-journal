@@ -35,6 +35,7 @@ pipeline {
     environment {
         NETLIFY_SITE_ID = 'cce76f82-8201-49d8-8568-bfbf975bdead' // Replace with your Netlify Site ID
         NETLIFY_AUTH_TOKEN = credentials('nfp_8fvPFR3VrysxymzSKzApTRMHbnxFacCp511f') // Replace with your Jenkins Credential ID for Netlify token
+        NETLIFY_DEPLOY_DIR = 'build' // The directory to deploy (typically "build" for React)
     }
 
     stages {
@@ -64,7 +65,7 @@ pipeline {
                 // Deploy to Netlify using Netlify CLI
                 sh '''
                 npm install -g netlify-cli
-                netlify deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_AUTH_TOKEN --prod --dir=build
+                netlify deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_AUTH_TOKEN --dir=$NETLIFY_DEPLOY_DIR --prod
                 '''
             }
         }
