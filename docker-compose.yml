@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  app:
+    build:
+      context: .
+    volumes:
+      - .:/travel-journal
+    ports:
+      - 3010:3000
+    image: app:travel-journal
+    container_name: react_container
+    command: npm start
